@@ -21,6 +21,11 @@
 	left: 0;
 	padding: 4rem;
 	z-index: 1;
+	height: calc(100% - 8rem);
+	width: calc(100% - 8rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .homeTitle {
@@ -31,8 +36,8 @@
 }
 
 .homeSubtitle {
-	font-size: 4rem;
-	color: #ffffff;
+	font-size: 2rem;
+	color: rgba(255, 255, 255, 0.6);
 	display: block;
 }
 
@@ -68,4 +73,23 @@
 	left: 0;
 	animation: disappear 1s ease-in-out;
 	pointer-events: none;
+}
+
+@keyframes fadeIn {
+	0% {
+		filter: opacity(0.0)
+	}
+	100% {
+		filter: opacity(1.0)
+	}
+}
+
+.contentToReveal {
+	animation: fadeIn 1s ease-in-out;
+}
+
+.pageBottomContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 }

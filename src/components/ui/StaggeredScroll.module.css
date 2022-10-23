@@ -1,0 +1,47 @@
+.staggeredScrollOuter {
+	display: block;
+	overflow-y: hidden;
+	position: relative;
+	vertical-align: middle;
+}
+
+@keyframes middle {
+	0% {
+		top: 5rem;
+	}
+	100% {
+		top: 0rem;
+	}
+}
+
+.staggeredScrollItem {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: middle 1s ease-in-out;
+}
+
+@keyframes top {
+	0% {
+		top: 0rem;
+	}
+	100% {
+		top: -5rem;
+	}
+}
+
+.staggeredScrollItemTop {
+	display: inline-block;
+	position: absolute;
+	top: -5rem;
+	left: 0;
+	animation: top 1s ease-in-out;
+}
+
+.hidden {
+	display: inline-block;
+	position: absolute;
+	top: -5rem;
+	left: 0;
+}

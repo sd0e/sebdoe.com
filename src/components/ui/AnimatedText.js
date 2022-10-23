@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-export default function AnimatedText({ children, fontSize = "1rem" }) {
+export default function AnimatedText({ children, fontSize = "1rem", className }) {
     const text = children;
 
     const controls = useAnimation();
@@ -56,6 +56,7 @@ export default function AnimatedText({ children, fontSize = "1rem" }) {
                             key={idx}
                             variants={characterAnimation}
                             style={{ display: 'inline-block', marginRight: '-0.05rem' }}
+                            className={className}
                         >
                             {character}
                         </motion.span>

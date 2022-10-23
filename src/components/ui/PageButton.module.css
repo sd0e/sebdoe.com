@@ -1,0 +1,18 @@
+.pageButtonContentHolder {
+	font-size: 2rem;
+	line-height: 2rem;
+	display: block;
+}
+
+.pageNumber {
+	display: inline-block;
+	margin-right: 1rem;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.2);
+}
+
+.pageTitle {
+	display: inline-block;
+	color: rgba(255, 255, 255, 1.0);
+}

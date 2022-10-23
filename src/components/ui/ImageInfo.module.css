@@ -1,0 +1,17 @@
+.imageInfoOuter {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+}
+
+.imageInfoLink {
+	text-decoration: none;
+	/* text-decoration-color: #ffffff;
+	text-underline-offset: 2px;
+	text-decoration-thickness: 2px; */
+}
+
+.imageInfoText {
+	margin-left: 0.5rem;
+}
