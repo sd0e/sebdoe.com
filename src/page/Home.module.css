@@ -1,0 +1,71 @@
+@keyframes undoBlur {
+	0% {
+		filter: opacity(0.7);
+	}
+	100% {
+		filter: opacity(0.7);
+	}
+}
+
+.homeBackground {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: opacity(0.7);
+	animation: undoBlur 1s ease-in-out;
+}
+
+.homeContent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 4rem;
+	z-index: 1;
+}
+
+.homeTitle {
+	font-size: 2rem;
+	color: #ffffff;
+	display: block;
+	margin-bottom: 2rem;
+}
+
+.homeSubtitle {
+	font-size: 4rem;
+	color: #ffffff;
+	display: block;
+}
+
+.loadingOverlay {
+	background-color: #191919;
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+@keyframes disappear {
+	0% {
+		display: block;
+		filter: opacity(1.0);
+	}
+	100% {
+		display: none;
+		filter: opacity(0.0);
+	}
+}
+
+.loadingOverlayDisappear {
+	background-color: #191919;
+	filter: opacity(0.0);
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	animation: disappear 1s ease-in-out;
+	pointer-events: none;
+}
