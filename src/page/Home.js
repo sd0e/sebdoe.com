@@ -8,19 +8,46 @@ import AnimatedText from '../components/ui/AnimatedText';
 import StaggeredScroll from '../components/ui/StaggeredScroll';
 import { Link } from 'react-router-dom';
 import ImageInfo from '../components/ui/ImageInfo';
+import { ArrowForward } from '@mui/icons-material';
 
 export default function Home() {
     const [currentBackground, setCurrentBackground] = useState('low');
     const [contentRevealed, setContentRevealed] = useState(false);
+    const [image, setImage] = useState();
 
     useEffect(() => {
+        // const loadImage = () => {
+        //     return new Promise((resolve, reject) => {
+        //         const loadedImage = new Image();
+        //         loadedImage.src = `http://${window.location.host}/assets/home_new.jpg`;
+        //         loadedImage.onload = () => {
+        //             window.setTimeout(() => {
+        //                 resolve(loadedImage);
+        //             }, 1000);
+        //         }
+
+        //         loadedImage.onerror = err => reject(err)
+        //     });
+        // }
+
+        // loadImage().then(img => {
+        //     setImage(img);
+        //     setCurrentBackground('high');
+        //     console.log(image);
+
+        //     window.setTimeout(() => {
+        //         setContentRevealed(true);
+        //     }, 2000);
+        // })
+
         window.setTimeout(() => {
             setCurrentBackground('high');
-        }, 200);
+            window.firstLoad = false;
+        }, window.firstLoad === false ? 200 : 1000);
 
         window.setTimeout(() => {
             setContentRevealed(true);
-        }, 2000);
+        }, window.firstLoad === false ? 2000 : 2800);
     }, []);
 
     return (
@@ -28,6 +55,7 @@ export default function Home() {
             <Header Title="Home" />
             <div className={currentBackground === 'low' ? classes.loadingOverlay : classes.loadingOverlayDisappear}></div>
             <img src={Background} className={classes.homeBackground} alt="20 Fenchurch Street Building" />
+            {/*currentBackground === 'high' && <img src={image.path[0].currentSrc} className={classes.homeBackground} alt="20 Fenchurch Street Building" />*/}
             {currentBackground === 'high' &&
                 <div className={classes.homeContent}>
                     <div>
@@ -51,9 +79,12 @@ export default function Home() {
                     {contentRevealed && <div className={classes.contentToReveal}>
                         <div className={classes.pageBottomContent}>
                             <Link to="/nav">
-                                <AnimatedText fontSize="2rem">Explore</AnimatedText>
+                                <div className={classes.exploreHolder}>
+                                    <AnimatedText fontSize="2rem" inline>Explore</AnimatedText>
+                                    <ArrowForward fontSize="large" className={classes.exploreArrow} />
+                                </div>
                             </Link>
-                            <ImageInfo Source="https://unsplash.com/photos/6QM2OEO_-FQ">20 Fenchurch Street</ImageInfo>
+                            <ImageInfo Source="https://unsplash.com/photos/6QM2OEO_-FQ">Old and New</ImageInfo>
                         </div>
                     </div>}
                 </div>

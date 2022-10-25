@@ -93,3 +93,13 @@
 	justify-content: space-between;
 	align-items: flex-end;
 }
+
+.exploreHolder {
+	display: flex;
+	align-items: center;
+}
+
+.exploreArrow {
+	margin-left: 0.5rem;
+	color: #ffffff;
+}

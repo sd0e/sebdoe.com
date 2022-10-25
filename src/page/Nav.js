@@ -26,7 +26,13 @@ export default function Nav() {
 	});
 
 	return (
-		<motion.div initial={{ position: 'fixed', top: 0, left: '100%' }} animate={{ position: 'fixed', top: 0, left: 0 }} exit={{ position: 'fixed', top: 0, left: '100%' }} style={{ height: "calc(100% - 8rem)", overflow: "hidden", padding: '4rem' }} transition={{ type: 'spring', stiffness: 50 }}>
+		<motion.div
+			initial={{ position: 'fixed', top: 0, left: '100%' }}
+			animate={{ position: 'fixed', top: 0, left: 0 }}
+			exit={{ position: 'fixed', top: 0, left: '100%' }}
+			style={{ height: "calc(100% - 8rem)", overflow: "hidden", padding: '4rem' }}
+			transition={{ type: 'spring', stiffness: 50 }}
+		>
 			<ThemeProvider theme={theme}>
 				<Grid container spacing={4} direction="row">
 					<Grid item>

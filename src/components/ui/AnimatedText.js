@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-export default function AnimatedText({ children, fontSize = "1rem", className }) {
+export default function AnimatedText({ children, fontSize = "1rem", className, inline = false }) {
     const text = children;
 
     const controls = useAnimation();
@@ -38,7 +38,7 @@ export default function AnimatedText({ children, fontSize = "1rem", className })
     }
 
     return (
-        <span aria-label={children} style={{ fontSize: fontSize, color: '#ffffff', display: 'block' }}>
+        <span aria-label={children} style={{ fontSize: fontSize, color: '#ffffff', display: inline ? 'inline-block' : 'block' }}>
             {text.split(' ').map((word, index) => {
                 return <motion.span
                     ref={ref}
