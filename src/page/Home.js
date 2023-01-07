@@ -78,7 +78,7 @@ export default function Home() {
                     </div>
                     {contentRevealed && <div className={classes.contentToReveal}>
                         <div className={classes.pageBottomContent}>
-                            <Link to="/nav">
+                            <Link to="/about">
                                 <div className={classes.exploreHolder}>
                                     <AnimatedText fontSize="2rem" inline>Explore</AnimatedText>
                                     <ArrowForward fontSize="large" className={classes.exploreArrow} />

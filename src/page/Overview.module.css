@@ -1,0 +1,15 @@
+.markdown {
+	color: #ffffff;
+}
+
+.sectionHeading {
+	margin-top: 2rem;
+}
+
+.overviewOuter {
+	height: calc(100% - 8rem);
+	width: calc(100% - 8rem);
+	overflow: hidden;
+	overflow-y: auto;
+	padding: 4rem;
+}
